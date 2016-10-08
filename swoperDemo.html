@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <style type="text/css">
+        html {
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        //REM适配
+        (function (desW) {
+            var winW = document.documentElement.clientWidth;
+            var n = winW / desW;
+            var a = document.documentElement.style.fontSize = n * 100 + "px";
+            console.log(a);
+        })(640)
+
+    </script>
+
+</head>
+<body>
+
+<div class="main">
+
+    <div class="music">
+        <audio src="audio/beyond.mp3" loop preload="none" id="audioMusic"></audio>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+                <h2>个人简历</h2>
+                <img src="img1/8.png" alt=""/>
+                <img src="img1/9.png" alt=""/>
+                <img src="img1/10.png" alt=""/>
+
+                <p>－前端工程师－</p>
+            </div>
+            <div class="swiper-slide slide2">
+                <h2>个人简历</h2>
+                <img src="img1/1.png" alt=""/>
+                <img src="img1/8.png" alt=""/>
+                <img src="img1/12.png" alt=""/>
+
+                <h3>个 人 信 息</h3>
+                <img src="img1/11.jpg" alt=""/>
+
+                <p>姓名 : 叶青</p>
+
+                <p>职位 : 前端工程师</p>
+
+                <p>毕业学校 : 宿州学院</p>
+
+                <p>学历 : 二本</p>
+
+                <p>工作经验 : 3年</p>
+            </div>
+            <div class="swiper-slide slide3">
+                <h2>个人简历</h2>
+                <img src="img1/2.png" alt=""/>
+
+                <h3>个 人 信 息</h3>
+                <img src="img1/18.png" alt=""/>
+                <img src="img1/19.png" alt=""/>
+                <img src="img1/16.png" alt=""/>
+                <img src="img1/20.png" alt=""/>
+                <img src="img1/15.png" alt=""/>
+                <img src="img1/17.png" alt=""/>
+
+                <p>PS</p>
+
+                <p>AEDIUS</p>
+
+                <p>AU</p>
+
+                <p>PR</p>
+
+                <p>AE</p>
+
+                <p>AL</p>
+            </div>
+            <div class="swiper-slide slide4">
+                <h2>个人简历</h2>
+                <img src="img1/3.png" alt=""/>
+
+                <h3>专业技能</h3>
+
+                <div>
+                    <p>1994的某一年刚出生</p>
+
+                    <p>是个孩子</p>
+
+                    <p>什么都不懂的大傻逼</p>
+                </div>
+                <p></p>
+
+                <div>
+                    <p>1994的某一年刚出生</p>
+
+                    <p>是个孩子</p>
+
+                    <p>什么都不懂的大傻逼</p>
+                </div>
+                <p></p>
+
+                <div>
+                    <p>1994的某一年刚出生</p>
+
+                    <p>是个孩子</p>
+
+                    <p>什么都不懂的大傻逼</p>
+                </div>
+                <p></p>
+            </div>
+
+
+            <div class="swiper-slide slide5">
+                <h2>个人简历</h2>
+                <img src="img1/4.png" alt=""/>
+
+                <h3>项目经验</h3>
+
+                <div>
+                    <p>2013-06-23</p>
+
+                    <p>项目概述项目概述项目概述</p>
+
+                    <p>什么都不懂的大傻逼</p>
+                </div>
+                <p></p>
+
+                <div>
+                    <p>2016-06-23</p>
+
+                    <p>项目概述项目概述项目概述</p>
+
+                    <p>什么都不懂的大傻逼</p>
+                </div>
+                <p></p>
+
+                <div>
+                    <p>2017-06-23</p>
+
+                    <p>项目概述项目概述项目概述</p>
+
+                    <p>什么都不懂的大傻逼</p>
+                </div>
+                <p></p>
+            </div>
+            <div class="swiper-slide slide6">
+                <h2>个人简历</h2>
+                <img src="img1/5.png" alt=""/>
+                <h3>联系方式</h3>
+                <div>
+                    <img src="img1/22.png" alt=""/>
+                    <p>扫描二维码了解更多</p>
+                    <input type="button" value="联系我"/>
+                </div>
+                <span></span>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/swiper.min.js"></script>
+<script>
+
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        loop: true,
+        onSlideChangeEnd: function (swiper) {
+
+            var slideAry = swiper.slides;   //所有的模块  4个
+            var trueSlideNum = slideAry.length - 2;  //真实模块的个数  2个
+            var lastNum = trueSlideNum + 1;  //最后一个模块的索引
+            var curIn = swiper.activeIndex;  //当前的模块的索引
+
+            [].forEach.call(slideAry, function (item, index) {
+                item.id = null;
+                if (curIn == index) {
+                    switch (curIn) {
+
+                        case 0:
+                            item.id = 'page' + trueSlideNum;
+                            break;
+                        case lastNum:
+                            item.id = 'page1';
+                            break;
+                        default :
+                            item.id = "page" + curIn;
+                    }
+                }
+            })
+        }
+    });
+
+    (function () {
+
+        var music = document.querySelector(".music");
+        var audioMusic = document.querySelector("#audioMusic");
+        music.addEventListener("click", function () {
+            if (audioMusic.paused) {/*判断是否是停止*/
+                audioMusic.play();
+                music.className = "music musicMove";
+                return;
+            }
+            audioMusic.pause();
+            music.className = "music";
+            music.style.opacity = 1;
+        });
+
+        window.setTimeout(function () {
+            audioMusic.play();
+            /*播放*/
+            /*边播放边缓存，触发事件canplay*/
+            audioMusic.addEventListener("canplay", function () {
+                music.className = "music musicMove";
+            })
+        }, 1000)
+    })()
+
+
+</script>
+
+</html>
